@@ -4,20 +4,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Send } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
+    clinic: "",
     message: "",
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Form submitted:", formData)
-    // Handle form submission
+    window.open("https://t.me/ogneva_media", "_blank")
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,10 +38,11 @@ export function ContactSection() {
             Контакты
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Давайте <span className="text-primary">создавать вместе</span>
+            Давайте обсудим{" "}
+            <span className="text-primary">вашу клинику</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Готовы воплотить ваши цифровые амбиции? Свяжитесь с нами без обязательств и узнайте, чем мы можем помочь.
+            Запишитесь на бесплатную консультацию в Отделе заботы — расскажем, что именно поможет вашей клинике привлекать больше пациентов.
           </p>
         </div>
 
@@ -49,73 +50,71 @@ export function ContactSection() {
           <div className="lg:col-span-2">
             <Card className="border-none shadow-xl bg-background">
               <CardHeader>
-                <CardTitle className="text-2xl">Напишите нам</CardTitle>
+                <CardTitle className="text-2xl">Записаться на консультацию</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Имя *
+                        Ваше имя *
                       </label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Ваше имя"
+                        placeholder="Имя"
                         required
                         className="transition-all focus:scale-[1.02]"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        E-mail *
+                      <label htmlFor="phone" className="text-sm font-medium">
+                        Телефон *
                       </label>
                       <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
                         onChange={handleChange}
-                        placeholder="your@email.ru"
+                        placeholder="+7 900 123-45-67"
                         required
                         className="transition-all focus:scale-[1.02]"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium">
-                      Телефон
+                    <label htmlFor="clinic" className="text-sm font-medium">
+                      Название клиники / направление
                     </label>
                     <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
+                      id="clinic"
+                      name="clinic"
+                      value={formData.clinic}
                       onChange={handleChange}
-                      placeholder="+7 900 123-45-67"
+                      placeholder="Например: стоматология, многопрофильный центр..."
                       className="transition-all focus:scale-[1.02]"
                     />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Сообщение *
+                      Что хотите улучшить?
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Расскажите о вашем проекте..."
-                      rows={6}
-                      required
+                      placeholder="Расскажите о вашей задаче — мы подберём оптимальный инструмент"
+                      rows={5}
                       className="transition-all focus:scale-[1.02]"
                     />
                   </div>
                   <Button type="submit" size="lg" className="w-full sm:w-auto group">
                     <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    Отправить
+                    Записаться на консультацию
                   </Button>
                 </form>
               </CardContent>
@@ -127,11 +126,18 @@ export function ContactSection() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
-                    <Mail className="h-5 w-5" />
+                    <Icon name="Send" className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">E-mail</h3>
-                    <p className="text-sm text-muted-foreground">hello@example.com</p>
+                    <h3 className="font-semibold mb-1">Отдел заботы в Telegram</h3>
+                    <a
+                      href="https://t.me/ogneva_media"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline"
+                    >
+                      @ogneva_media
+                    </a>
                   </div>
                 </div>
               </CardContent>
@@ -141,11 +147,16 @@ export function ContactSection() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
-                    <Phone className="h-5 w-5" />
+                    <Icon name="Phone" className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Телефон</h3>
-                    <p className="text-sm text-muted-foreground">+7 900 123-45-67</p>
+                    <a
+                      href="tel:+79958980418"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      +7 995 898-04-18
+                    </a>
                   </div>
                 </div>
               </CardContent>
@@ -155,14 +166,12 @@ export function ContactSection() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
-                    <MapPin className="h-5 w-5" />
+                    <Icon name="Globe" className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Время работы</h3>
+                    <h3 className="font-semibold mb-1">Работаем по всей России</h3>
                     <p className="text-sm text-muted-foreground">
-                      Пн - Пт: 9:00 - 18:00
-                      <br />
-                      Выходные: по договоренности
+                      Онлайн-формат — без привязки к городу
                     </p>
                   </div>
                 </div>

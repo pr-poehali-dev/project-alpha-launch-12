@@ -2,19 +2,19 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, Sparkles } from "lucide-react"
 
 const values = [
-  { title: "Качество", description: "Высококлассные решения, соответствующие самым высоким стандартам" },
-  { title: "Доступность", description: "Профессиональные сайты по честным и прозрачным ценам" },
-  { title: "Прозрачность", description: "Четкая коммуникация без скрытых платежей" },
-  { title: "Клиентоориентированность", description: "Ваши цели и пожелания всегда в приоритете" },
-  { title: "Масштабируемость", description: "Сайты, которые растут вместе с вашим бизнесом" },
-  { title: "Гибкость", description: "Быстрая адаптация под меняющиеся потребности" },
+  { title: "Медицинская специализация", description: "Работаем только с клиниками и медцентрами с 2017 года. Знаем специфику изнутри." },
+  { title: "Без рекламного бюджета", description: "Геомаркетинг и органическое продвижение — приводим пациентов бесплатными методами." },
+  { title: "Полный цикл", description: "От аудита до результата под ключ. Один подрядчик — все инструменты медицинского маркетинга." },
+  { title: "Прозрачная отчётность", description: "Ежемесячные отчёты с конкретными цифрами: охваты, позиции, количество обращений." },
+  { title: "Работа с репутацией", description: "Системная работа с отзывами и рейтингами клиники и врачей на всех площадках." },
+  { title: "Вся Россия", description: "Работаем с клиниками в любом городе. Глубокое понимание региональной специфики." },
 ]
 
 const stats = [
-  { number: "50+", label: "Проектов" },
-  { number: "45+", label: "Довольных клиентов" },
-  { number: "30+", label: "Созданных логотипов" },
-  { number: "3+", label: "Года опыта" },
+  { number: "9+", label: "Лет в медицинском маркетинге" },
+  { number: "200+", label: "Клиник-партнёров" },
+  { number: "ТОП-1", label: "На Яндекс Картах для клиентов" },
+  { number: "0 ₽", label: "Рекламный бюджет" },
 ]
 
 export function AboutSection() {
@@ -27,19 +27,19 @@ export function AboutSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
             <Sparkles className="h-4 w-4" />
-            О CodeCraft
+            О нас
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Качество, которое{" "}
+            Агентство, которое{" "}
             <span className="text-primary relative">
-              впечатляет
+              понимает медицину
               <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
                 <path d="M0 4C50 2 150 6 200 4" stroke="currentColor" strokeWidth="2" className="text-primary" />
               </svg>
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Создание сайта не должно быть дорогим. Мы разрабатываем индивидуальные решения, которые идеально соответствуют пожеланиям каждого клиента.
+            С 2017 года занимаемся продвижением в сфере медицины. Знаем специфику и работаем со всеми инструментами медицинского маркетинга — от геосервисов до PR в СМИ.
           </p>
         </div>
 

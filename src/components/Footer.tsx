@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function Footer() {
   return (
@@ -6,9 +6,14 @@ export function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">CodeCraft</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              2025 CodeCraft. Все права защищены.
+            <h3 className="text-xl font-bold mb-4">
+              Ogneva<span className="text-primary">Media</span>
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+              Медицинский маркетинг для клиник по всей России. С 2017 года.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              © 2026 OgnevaMedia. Все права защищены.
             </p>
           </div>
 
@@ -27,7 +32,12 @@ export function Footer() {
               </li>
               <li>
                 <a href="#portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Портфолио
+                  Кейсы
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Тарифы
                 </a>
               </li>
               <li>
@@ -39,34 +49,23 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Мы в соцсетях</h4>
-            <div className="flex gap-4">
+            <h4 className="font-semibold mb-4">Отдел заботы</h4>
+            <div className="space-y-3">
               <a
-                href="https://linkedin.com"
+                href="https://t.me/ogneva_media"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+                <Icon name="Send" size={16} />
+                @ogneva_media
               </a>
               <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                href="tel:+79958980418"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
+                <Icon name="Phone" size={16} />
+                +7 995 898-04-18
               </a>
             </div>
           </div>

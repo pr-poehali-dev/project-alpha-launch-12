@@ -1,6 +1,7 @@
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { Logo } from "@/components/Logo"
 import { MobileMenu } from "@/components/MobileMenu"
+import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
 export function Navbar() {
@@ -34,7 +35,7 @@ export function Navbar() {
               Услуги
             </a>
             <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
-              Портфолио
+              Кейсы
             </a>
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Тарифы
@@ -45,6 +46,16 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="hidden md:flex border-primary/30 hover:border-primary text-sm"
+              asChild
+            >
+              <a href="tel:+79958980418">
+                +7 995 898-04-18
+              </a>
+            </Button>
             <ThemeToggle />
             <MobileMenu />
           </div>

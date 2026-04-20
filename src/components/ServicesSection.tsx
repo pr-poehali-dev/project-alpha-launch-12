@@ -1,42 +1,43 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Layout, Palette, Code, Share2, Target, Search } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 
 const services = [
   {
-    icon: Layout,
-    title: "Веб-дизайн",
+    icon: "MapPin",
+    title: "Геосервисы",
     description:
-      "Мы создаем сайты, которые не только визуально привлекательны, но и функциональны, удобны в использовании. В CodeCraft ваш бренд в центре внимания — мы обеспечиваем соответствие онлайн-присутствия целям и ценностям вашего бизнеса.",
+      "Комплексная работа по упаковке и сопровождению Яндекс Карт, 2ГИС, Google Maps. Выводим вашу клинику в ТОП — чтобы пациент нашёл именно вас, а не конкурента через дорогу.",
   },
   {
-    icon: Palette,
-    title: "Графический дизайн",
+    icon: "Stethoscope",
+    title: "Медицинские порталы",
     description:
-      "От логотипов до постов в соцсетях — мы создаем креативные графические решения, усиливающие ваш бренд. Наши дизайны уникальны и профессиональны, производя нужное впечатление на целевую аудиторию.",
+      "Комплексная работа по упаковке и сопровождению ПроДокторов, СберЗдоровье, НаПоправку. Превращаем профиль агрегатора в стабильный канал записи пациентов.",
   },
   {
-    icon: Code,
-    title: "Веб-разработка",
+    icon: "Share2",
+    title: "Соцсети для клиник",
     description:
-      "Мы создаем технически надежные и перспективные сайты. Наша команда обеспечивает надежность, масштабируемость и скорость, помогая вашему бизнесу расти в цифровом пространстве.",
+      "Создание контента, который снимает страхи пациента и закрывает возражения до визита в клинику. Стратегия, публикации, модерация и таргетированная реклама.",
   },
   {
-    icon: Share2,
-    title: "Соцсети",
+    icon: "Newspaper",
+    title: "Медицинский PR",
     description:
-      "Сильное присутствие в социальных сетях сегодня решает многое. Мы поможем создать впечатление с помощью привлекательных визуалов и эффективных стратегий, чтобы ваш бренд оставался заметным.",
+      "Экспертные публикации врачей в авторитетных СМИ, выступления на конференциях, аудио и видео-подкастах. Укрепляем доверие и отстраиваем от конкурентов.",
   },
   {
-    icon: Target,
-    title: "Результат",
+    icon: "Search",
+    title: "SEO для медицины",
     description:
-      "В CodeCraft мы нацелены на успех. Наш подход всегда направлен на достижение измеримых результатов, способствующих росту вашего бизнеса. Вместе находим то, что действительно работает.",
+      "Знаем специфику медицинской тематики и работаем со всеми инструментами. Оптимизация сайта клиники с учётом требований Яндекса и ограничений медицинской рекламы.",
   },
   {
-    icon: Search,
-    title: "SEO",
+    icon: "TrendingUp",
+    title: "Репутация и отзывы",
     description:
-      "Видимость в поиске критически важна. Мы оптимизируем сайт с применением современных SEO-техник, чтобы вы были выше в Google и целевая аудитория легко вас находила.",
+      "Системная работа с отзывами на всех площадках. Взаимодействие с пациентами, нейтрализация негатива, наращивание рейтинга клиники и врачей.",
   },
 ]
 
@@ -47,13 +48,14 @@ export function ServicesSection() {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mx-auto block w-fit">
-          Наша экспертиза
+          Медицинский маркетинг 2026
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-balance">
-          В чем мы <span className="text-primary">сильны</span>
+          Все инструменты для{" "}
+          <span className="text-primary">роста клиники</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed text-lg">
-          От концепции до запуска — мы трансформируем ваши цифровые амбиции в мощные онлайн-решения, приносящие результат.
+          Маркетинговое агентство полного цикла для клиник и сетей медицинских центров. Знаем специфику — работаем со всеми инструментами.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
@@ -63,7 +65,7 @@ export function ServicesSection() {
             >
               <CardHeader>
                 <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <service.icon className="h-6 w-6" />
+                  <Icon name={service.icon} fallback="Star" className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
               </CardHeader>
@@ -72,6 +74,13 @@ export function ServicesSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <Button size="lg" className="font-semibold px-8" asChild>
+            <a href="https://t.me/ogneva_media" target="_blank" rel="noopener noreferrer">
+              Бесплатная консультация
+            </a>
+          </Button>
         </div>
       </div>
     </section>
