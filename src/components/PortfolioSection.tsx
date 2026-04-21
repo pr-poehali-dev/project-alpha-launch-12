@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Icon from "@/components/ui/icon"
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 
 const cases = [
   {
     category: "Геосервисы · Яндекс Карты",
-    title: "Стоматология «Улыбка»",
+    title: "Стоматология «Улыбка» - ТУТ ТЕСТТ",
     location: "Казань",
     description:
       "Подняли клинику с 12-го на 1-е место в Яндекс Картах за 2 месяца. Оптимизировали карточку, выстроили работу с отзывами, запустили регулярный контент.",
@@ -51,7 +51,7 @@ const cases = [
       { value: "+25%", label: "к среднему чеку" },
     ],
   },
-]
+];
 
 export function PortfolioSection() {
   return (
@@ -62,7 +62,8 @@ export function PortfolioSection() {
             Кейсы клиентов
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Реальные результаты клиник, которые выбрали медицинский маркетинг без рекламного бюджета.
+            Реальные результаты клиник, которые выбрали медицинский маркетинг
+            без рекламного бюджета.
           </p>
         </div>
 
@@ -73,7 +74,9 @@ export function PortfolioSection() {
               className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <CardContent className="p-8">
-                <p className="text-sm text-primary font-semibold mb-1">{item.category}</p>
+                <p className="text-sm text-primary font-semibold mb-1">
+                  {item.category}
+                </p>
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <span className="text-xs text-muted-foreground flex items-center gap-1 ml-4 mt-1 flex-shrink-0">
@@ -81,20 +84,32 @@ export function PortfolioSection() {
                     {item.location}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{item.description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {item.description}
+                </p>
 
                 <div className="flex gap-4 mb-6">
                   {item.results.map((res, i) => (
-                    <div key={i} className="bg-primary/10 rounded-xl px-4 py-3 text-center flex-1">
-                      <div className="text-2xl font-bold text-primary">{res.value}</div>
-                      <div className="text-xs text-muted-foreground mt-1">{res.label}</div>
+                    <div
+                      key={i}
+                      className="bg-primary/10 rounded-xl px-4 py-3 text-center flex-1"
+                    >
+                      <div className="text-2xl font-bold text-primary">
+                        {res.value}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        {res.label}
+                      </div>
                     </div>
                   ))}
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                    <span
+                      key={tagIndex}
+                      className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -105,13 +120,22 @@ export function PortfolioSection() {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-primary/30 hover:border-primary font-semibold px-8" asChild>
-            <a href="https://t.me/ogneva_media" target="_blank" rel="noopener noreferrer">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-primary/30 hover:border-primary font-semibold px-8"
+            asChild
+          >
+            <a
+              href="https://t.me/ogneva_media"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Обсудить ваш проект
             </a>
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
