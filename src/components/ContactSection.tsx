@@ -1,11 +1,11 @@
-import type React from "react"
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Send } from "lucide-react"
-import Icon from "@/components/ui/icon"
+import type React from "react";
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Send } from "lucide-react";
+import Icon from "@/components/ui/icon";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,22 +13,27 @@ export function ContactSection() {
     phone: "",
     clinic: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    window.open("https://t.me/ogneva_media", "_blank")
-  }
+    e.preventDefault();
+    window.open("https://t.me/ogneva_media", "_blank");
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden"
+    >
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
@@ -38,11 +43,11 @@ export function ContactSection() {
             Контакты
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Давайте обсудим{" "}
-            <span className="text-primary">вашу клинику</span>
+            Давайте обсудим <span className="text-primary">вашу клинику</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Запишитесь на бесплатную консультацию в Отделе заботы — расскажем, что именно поможет вашей клинике привлекать больше пациентов.
+            Запишитесь на бесплатную консультацию в Отделе заботы — расскажем,
+            что именно поможет вашей клинике привлекать больше пациентов.
           </p>
         </div>
 
@@ -50,7 +55,9 @@ export function ContactSection() {
           <div className="lg:col-span-2">
             <Card className="border-none shadow-xl bg-background">
               <CardHeader>
-                <CardTitle className="text-2xl">Записаться на консультацию</CardTitle>
+                <CardTitle className="text-2xl">
+                  Записаться на консультацию1
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -112,7 +119,11 @@ export function ContactSection() {
                       className="transition-all focus:scale-[1.02]"
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full sm:w-auto group">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto group"
+                  >
                     <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     Записаться на консультацию
                   </Button>
@@ -129,7 +140,9 @@ export function ContactSection() {
                     <Icon name="Send" className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Отдел заботы в Telegram</h3>
+                    <h3 className="font-semibold mb-1">
+                      Отдел заботы в Telegram
+                    </h3>
                     <a
                       href="https://t.me/ogneva_media"
                       target="_blank"
@@ -169,7 +182,9 @@ export function ContactSection() {
                     <Icon name="Globe" className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Работаем по всей России</h3>
+                    <h3 className="font-semibold mb-1">
+                      Работаем по всей России
+                    </h3>
                     <p className="text-sm text-muted-foreground">
                       Онлайн-формат — без привязки к городу
                     </p>
@@ -181,5 +196,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
